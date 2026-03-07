@@ -1,4 +1,3 @@
-cat > /Users/deepakverma/Documents/monocarton-backend/railway.json << 'EOF'
 {
   "build": {
     "builder": "NIXPACKS"
@@ -7,4 +6,3 @@ cat > /Users/deepakverma/Documents/monocarton-backend/railway.json << 'EOF'
     "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT"
   }
 }
-EOF
