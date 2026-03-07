@@ -1,5 +1,5 @@
 cat > /Users/deepakverma/Documents/monocarton-backend/requirements.txt << 'EOF'
-fastapi
-uvicorn
-pydantic
+fastapi==0.109.0
+uvicorn==0.27.0
+pydantic==2.6.0
 EOF
