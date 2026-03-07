@@ -1,0 +1,5 @@
+cat > /Users/deepakverma/Documents/monocarton-backend/requirements.txt << 'EOF'
+fastapi
+uvicorn
+pydantic
+EOF
