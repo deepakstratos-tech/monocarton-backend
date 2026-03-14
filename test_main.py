@@ -1,5 +1,7 @@
 from fastapi.testclient import TestClient
-from main import app, calculate_flat_size, CartonSpecRequest
+from main import app
+from features.cartons.service import calculate_flat_size
+from features.cartons.models import CartonSpecRequest
 
 client = TestClient(app)
 
@@ -33,7 +35,7 @@ def test_root():
 # ══════════════════════════════════════════════════
 
 def test_get_box_styles():
-    response = client.get("/box-styles")
+    response = client.get("/carton/styles")
     assert response.status_code == 200
     data = response.json()
     assert "bottom_side_lock" in data
