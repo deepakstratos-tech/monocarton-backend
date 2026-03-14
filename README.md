@@ -1,4 +1,3 @@
-cat > /Users/deepakverma/Documents/monocarton-backend/README.md << 'EOF'
 # Mono Backend
 
 FastAPI backend for Mono — the Monocarton Imposition Planner.
@@ -95,4 +94,3 @@ Live URL: `https://web-production-e59f.up.railway.app`
 ## Changelog
 - v1.1 — Added Tier 2 algorithms: FF, FFD, NFDH, Best Fit, Compare endpoint
 - v1.0 — Initial release with Straight and Tumble layout
-EOF
