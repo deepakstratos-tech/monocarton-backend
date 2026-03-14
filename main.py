@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
@@ -522,7 +522,10 @@ def get_box_styles():
 
 @app.post("/carton/flat-size", response_model=CartonSpecResponse)
 def get_flat_size(req: CartonSpecRequest):
-    return calculate_flat_size(req)
+    try:
+        return calculate_flat_size(req)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 @app.post("/layout/straight", response_model=LayoutResponse)
 def straight_layout(req: LayoutRequest):
