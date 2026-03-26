@@ -4,6 +4,8 @@ from config import settings
 from features.cartons.router import router as cartons_router
 from features.layout.router import router as layout_router
 from features.extract.router import router as extract_router
+from features.jobs.router import router as jobs_router
+
 
 app = FastAPI(
     title=settings.app_name,
@@ -27,3 +29,5 @@ def root():
         "message": f"{settings.app_name} is running",
         "version": settings.app_version
     }
+
+app.include_router(jobs_router, prefix="/jobs", tags=["Jobs"])
