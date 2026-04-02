@@ -28,3 +28,21 @@ class DesignAsset(BaseModel):
     width: int = 0
     height: int = 0
     notes: str = ""
+    
+class BoxStyleDetectionRequest(BaseModel):
+    polygon: List[Point]
+    image_width: int
+    image_height: int
+    declared_style: str  # what user selected
+
+class BoxStyleDetectionResult(BaseModel):
+    detected_style: str
+    detected_style_name: str
+    declared_style: str
+    declared_style_name: str
+    confidence: str          # High / Medium / Low
+    match: bool              # True if detected == declared
+    suggestion: str          # message to show user
+    top_ratio: float         # top flap / total height
+    bottom_ratio: float      # bottom flap / total height
+    analysis_notes: str
